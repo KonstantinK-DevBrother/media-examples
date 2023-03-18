@@ -1,0 +1,21 @@
+extends layout
+
+block content
+  form#submit-upload(action="upload-view", method="post") 
+    input#video-upload(type="file", name="video-upload")
+    input(type="submit", value="upload")
+
+  video#video(
+    height=720
+    controls 
+  )
+    track(
+      label="English"
+      kind="subtitles"
+      srclang="en"
+      src="subtitles/" + videoPath + '.vtt'
+      default
+    )
+
+  script(src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js") 
+  script(src="/javascripts/preview.js")

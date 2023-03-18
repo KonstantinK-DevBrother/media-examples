@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  - const videoSrc = 'https://binance-robot-dev-serverlessdeploymentbucket-1a0mfrj48kg56.s3.us-east-1.amazonaws.com/test/' + videoPath + '_360p.mp4?response-content-disposition=inline&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEMn%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaDGV1LWNlbnRyYWwtMSJGMEQCIHp%2F9g%2BrZ0ZWL6ujpMVljUppmCkNaxExxO%2BL%2BqAQlUcvAiBKSJ7qoC9qx%2FnyPs6hevF1DSUmjsGGrdg4cv78dK5TOirkAghCEAAaDDY3MDgzODUxODg2NiIMqSKSV3pJzfTt6CGkKsECWfYUdpYWbMGwfWko1rjdApg4fVA1Qr7OW1P5yg4kt2vyDuDx6kKhB5vJ2hjYQi9xg9SBDoPe08SnW6Bu9iLTvKHzFXQneZvifNRhPaC3O2yhg3Zrt6%2BXqpW1Wnlh72UOW%2Fe89dtipCClAZoUtgYohdDNUyP3WX%2FcazyVBr6fkT%2BDOHxrI3OrdjxK2h%2FGvQ7byN8DBp%2F7vLhrGNe2XoQFQyHgLEx1J15b%2B44rXGMGO7%2B0r7ybN6lTM2uIWJ%2BFmScjNwFa0QuxLtAXH%2Flv%2FmTmxW0gBxqzgdyqHr8WyHA9ryTFZLZYVJUFzsnyiyzyQW57zZuvVp4Ip%2FLQRDMYkz2UuiM5UJ2DWjM2HDZnPi%2BRxbxYRG1sFNmsuevpwbHZPGaxzxPz53fkk78CpsOdhF51m65ICPbSPRQwHbGjK23WMVzlMIWkzp4GOrQCmO%2FRr2DF90AmS9l%2BxKwrd%2BUcmfyBl6Kq%2FvexRLYzmgsS4E3jneWj76eR%2FbY0AsUXNW%2Ff59z%2F9V1PJZ5qEBFQX6KLJT%2FFxl%2BRfWEwlOMFDIhz899x9a6rhvgUHx7jDOA5Smh6ORhLnlMAe61JEIh76XwZNkd9XqrEUbvCTSz6vnF0hMSYIhHXz5RB8JcP6C%2FrA%2F%2BdpObgsolBG4EXbn%2FSvpPPUgMvmKEX41lDN8Y7feogap1Cipk9X5V6G9Ok5s6v%2BtlTsnA2EmNpD0l386Q7nuk1lfKIWfpN3tj0HJr14hfO42NNbRCHE74gawZgZMaM8lVqAw%2Fid88hnlE6yghwZX8cIxQ5r49ns2MQYUkZNlGM6zS%2FBlkXiSKeCBPSnu%2FtAhsmIbzh%2F5EI7OC47C9POj%2FV0k0%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20230127T090800Z&X-Amz-SignedHeaders=host&X-Amz-Expires=3600&X-Amz-Credential=ASIAZYMIXORJG5WOWP5F%2F20230127%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=5d27804444336d48fb5f3cbe530859d701bb204311775ed5f1a698a608c8d918';
+
+  video#video(
+    height=720
+    controls 
+    src=videoSrc
+  )
+    track(
+      label="English"
+      kind="subtitles"
+      srclang="en"
+      src="subtitles/" + videoPath + '.vtt'
+      default
+    )

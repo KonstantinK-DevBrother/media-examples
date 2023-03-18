@@ -1,0 +1,32 @@
+extends layout
+
+block content
+  - const videoSrc = 'video/buffered/' + videoPath;
+  video#video(
+    height=720
+    poster="/images/" + videoPath + '.png'
+    controls
+    text-align="center"
+  )
+    source(    
+      src=videoSrc
+      type="video/mp4"
+    )
+    track(
+      label="English"
+      kind="subtitles"
+      srclang="en"
+      src="subtitles/" + videoPath + '.vtt'
+      default
+    )
+
+  div.buttons
+    button.set-resolution-btn(
+      onclick="setVideoSource('" + videoSrc + "')"
+    ) 720p
+
+    button.set-resolution-btn(
+      onclick="setVideoSource('" + videoSrc + "/360p')"
+    ) 360p
+
+  script(src="/javascripts/index.js")
